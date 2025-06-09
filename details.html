@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Details - MICCAI 2025 Doctoral Consortium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .details-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .details-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(100,116,139,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .details-content {
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .details-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .details-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #1d4ed8;
+        }
+
+        .coming-soon-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .coming-soon-card {
+            background: white;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .coming-soon-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .coming-soon-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        .coming-soon-text {
+            font-size: 1.2rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .notification-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .notification-card h4 {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification-card ul {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .notification-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-reminder {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-reminder p {
+            color: #166534;
+            margin: 0;
+        }
+
+        .contact-reminder a {
+            color: #059669;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-reminder a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/miccai-logo.png" alt="MICCAI Logo" class="logo-img">
+                <span class="logo-text">MICCAI Docotoral Consortium 2025</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#program" class="nav-link">Program</a></li>
+                <li><a href="index.html#eligibility" class="nav-link">Eligibility</a></li>
+                <li><a href="index.html#dates" class="nav-link">Important Dates</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Details Hero Section -->
+    <section class="details-hero">
+        <div class="details-container">
+            <div class="details-content">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Main Page
+                </a>
+                <h1 class="details-title">Submission Details</h1>
+                <p class="details-subtitle">Complete guidelines and requirements for your doctoral consortium submission</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-card">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h2 class="coming-soon-title">Details Coming Soon</h2>
+                <p class="coming-soon-text">
+                    We are currently finalizing the submission guidelines, formatting requirements, and detailed instructions for the MICCAI 2025 Doctoral Consortium. Complete submission details will be available shortly.
+                </p>
+
+                <div class="notification-card">
+                    <h4>
+                        <i class="fas fa-bell"></i>
+                        What to Expect
+                    </h4>
+                    <ul>
+                        <li><strong>Submission Portal:</strong> Online submission system with user-friendly interface</li>
+                        <li><strong>Format Guidelines:</strong> Detailed formatting requirements for 8-page research reports</li>
+                        <li><strong>Review Criteria:</strong> Evaluation metrics and assessment guidelines</li>
+                        <li><strong>Required Documents:</strong> List of all necessary files and supporting materials</li>
+                        <li><strong>Supervisor Letter:</strong> Template and requirements for supervisor support letters</li>
+                        <li><strong>Technical Requirements:</strong> File formats, size limits, and submission specifications</li>
+                    </ul>
+                </div>
+
+                <div class="contact-reminder">
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        Questions about submissions?<br>
+                        Contact us at <a href="mailto:miccai-student-board@csail.mit.edu">miccai-student-board@csail.mit.edu</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/miccai-logo.png" alt="MICCAI Logo">
+                    <p>MICCAI 2025 Doctoral Consortium</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#program">Program</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MICCAI Student Board. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
