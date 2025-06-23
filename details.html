@@ -1,335 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Details - MICCAI 2025 Doctoral Consortium</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .details-hero {
-            min-height: 50vh;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            margin-top: 80px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submission Details - MICCAI 2025 Doctoral Consortium</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-        .details-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(100,116,139,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.6;
-        }
-
-        .details-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .details-content {
-            text-align: center;
-            color: #1f2937;
-        }
-
-        .details-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .details-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 2rem;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .back-btn:hover {
-            color: #1d4ed8;
-        }
-
-        .coming-soon-section {
-            padding: 80px 0;
-            background: #f9fafb;
-        }
-
-        .coming-soon-card {
-            background: white;
-            padding: 4rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .coming-soon-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-        }
-
-        .coming-soon-icon i {
-            font-size: 3rem;
-            color: white;
-        }
-
-        .coming-soon-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #1f2937;
-        }
-
-        .coming-soon-text {
-            font-size: 1.2rem;
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .notification-card {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .notification-card h4 {
-            color: #1e40af;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .notification-card ul {
-            color: #374151;
-            line-height: 1.6;
-        }
-
-        .notification-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-reminder {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .contact-reminder p {
-            color: #166534;
-            margin: 0;
-        }
-
-        .contact-reminder a {
-            color: #059669;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .contact-reminder a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <!-- Styles for nav buttons -->
+  <style>
+    .nav-btn {
+      padding: 0.75rem 1.5rem;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .nav-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/miccai-logo.png" alt="MICCAI Logo" class="logo-img">
-                <span class="logo-text">MICCAI 2025 Doctoral Consortium</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#program" class="nav-link">Program</a></li>
-                <li><a href="index.html#eligibility" class="nav-link">Eligibility</a></li>
-                <li><a href="index.html#dates" class="nav-link">Important Dates</a></li>
-                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Details Hero Section -->
-    <section class="details-hero">
-        <div class="details-container">
-            <div class="details-content">
-                <a href="index.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i>
-                    Back to Main Page
-                </a>
-                <h1 class="details-title">Submission Details</h1>
-                <p class="details-subtitle">Complete guidelines and requirements for your doctoral consortium submission</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coming Soon Section -->
-    <section class="coming-soon-section">
-    <div class="coming-soon-card">
-        <!-- <div class="coming-soon-icon">
-            <i class="fas fa-file-upload"></i>
-        </div> -->
-        
-        <div class="coming-soon-text" style="text-align: left;">
-
-            <h3 style="margin-top: 2rem; font-size: 1.75rem; color: #1f2937;">Submission Guidelines</h3>
-            
-            <ul style="margin-top: 0.5rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
-              <li>Submit a <strong>single PDF report</strong> using the provided LaTeX template.</li>
-              <li>Submissions must be <strong>single-authored by a doctoral student</strong> and are <strong>not anonymous</strong>.</li>
-              <li>Include your <strong>name, affiliation, and contact information</strong> in the submission.</li>
-              <li><strong>Advisors and collaborators cannot co-author</strong> the submission.</li>
-            </ul>
-            
-            <p style="margin-bottom: 0.5rem;"><strong>The PDF report must include the following sections <span style="color: #dc2626;">in order</span>:</strong></p>
-            
-            <ul style="margin-bottom: 2rem; padding-left: 1.2rem; line-height: 1.6;">
-              <li><strong>Abstract</strong>: Concise summary of your research (maximum 250 words).</li>
-              <li><strong>PhD Research Summary</strong>: Overview of your project, including objectives, approach, and key results. <strong>Length: 8 pages</strong> (excluding references).</li>
-              <li><strong>Curriculum Vitae (CV)</strong>: Academic background, publications, and relevant experience. <strong>Maximum: 2 pages</strong>.</li>
-              <li><strong>References</strong>: Include all cited works at the end of the document.</li>
-            </ul>
-            
-            <p>👉 <a href="https://github.com/miccaimsb/msb-doctoral25/blob/main/MSB%20Doctoral%20Consortium%20Template%202025.zip" target="_blank" style="color: #2563eb; font-weight: 600;">Download the LaTeX template (ZIP)</a></p>
-
-            <h3 style="margin-top: 2rem; font-size: 1.75rem; color: #1f2937;">Submission Process</h3>
-            
-            <ul style="margin-top: 1rem; padding-left: 1rem; line-height: 1.6;">
-              <li>
-                <strong style="color: #dc2626;">Registration:</strong><br>
-                Visit the submission portal: <strong>Link coming soon</strong>
-              </li>
-              <li>
-                <strong style="color: #dc2626;">Login Details:</strong><br>
-                After registering, you will receive an autogenerated code by email.
-              </li>
-              <li>
-                <strong style="color: #dc2626;">Upload Your Report:</strong><br>
-                Log in to the portal and click <strong>Upload Documents</strong> to submit your PDF file. You can upload your document multiple times; only the latest version will be considered.<br>
-                (If the filename appears the same, don’t worry! Your latest file is safely stored.) 
-                  
-              </li>
-              <li>
-                <strong style="color: #dc2626;">Supervisor Recommendation Letter:</strong><br>
-                After you register, your supervisor will also receive a separate email with their own login details. They must log in to the same portal to upload the <strong>recommendation letter (PDF)</strong>. <br>
-                Please note: Students cannot view files uploaded by their supervisors; however, supervisors will be able to see the report uploaded by the student.
-                  
-              </li>
-            </ul>
-            
-            <h3 style="margin-top: 2rem; font-size: 1.5rem; color: #1f2937;">Additional Submission Information</h3>
-
-            <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.6;">
-              
-              <li>
-                <strong>Publication:</strong><br>
-                The 8-page PhD Research Summary submitted to the consortium is tentatively planned for publication in the MICCAI 2025 Doctoral Consortium Proceedings as part of the Springer <em>Lecture Notes in Computer Science (LNCS)</em> series (subject to final confirmation).
-              </li>
-            
-              <li>
-                <strong>Curriculum Vitae (CV):</strong><br>
-                The CV will be stored confidentially and will not be published or shared outside the organizing committee.
-              </li>
-            
-              <li>
-                <strong>Recommendation Letter – Required Contents:</strong><br>
-                Your supervisor’s letter should:<br>
-                <ul style="margin-top: 0.3rem; margin-bottom: 0.5rem; padding-left: 1.2rem; list-style-type: disc;">
-                  <li>Describe your research progress, academic potential, and achievements to date.</li>
-                  <li>Explain why participating in this Doctoral Symposium would benefit your research development and career growth.</li>
-                  <li>Provide their perspective on the significance of your research contribution: why your work is important to the MICCAI community.</li>
-                  <li>Confirm the expected graduation date you provided in your application.</li>
-                </ul>
-              </li>
-            
-              <li>
-                <strong>Confidentiality:</strong><br>
-                Recommendation letters will remain strictly confidential. They will only be accessible to the program chairs and the awards committee; they will not be shared with reviewers.
-              </li>
-            
-            </ul>
-
-
-
-            <div class="notification-card">
-                <h4><i class="fas fa-info-circle"></i>Important Notes!</h4>
-                <ul>
-                    <li><strong>File Format</strong>: PDF only, generated using the provided LaTeX template.</li>
-                    <li><strong>Incomplete submissions</strong> (e.g., missing recommendation letter) will not be considered.</li>
-                </ul>
-            </div>
-            <div class="contact-reminder">
-                For any questions, please contact: <strong><a href="mailto:miccai-student-board@csail.mit.edu">miccai-student-board@csail.mit.edu</a></strong>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/miccai-logo.png" alt="MICCAI Logo" class="logo-img" />
+        <span class="logo-text">MICCAI 2025 Doctoral Consortium</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#program" class="nav-link">Program</a></li>
+        <li><a href="index.html#eligibility" class="nav-link">Eligibility</a></li>
+        <li><a href="index.html#dates" class="nav-link">Important Dates</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
-</section>
-  
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/miccai-logo.png" alt="MICCAI Logo">
-                    <p>MICCAI 2025 Doctoral Consortium</p>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html#home">Home</a>
-                    <a href="index.html#about">About</a>
-                    <a href="index.html#program">Program</a>
-                    <a href="index.html#faq">FAQ</a>
-                    <a href="index.html#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MICCAI Student Board. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  </nav>
 
-    <script src="js/script.js"></script>
+  <!-- Details Hero Section -->
+  <section class="details-hero">
+    <div class="details-container">
+      <div class="details-content">
+        <a href="index.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i>
+          Back to Main Page
+        </a>
+        <h1 class="details-title">Submission Details</h1>
+        <p class="details-subtitle">Complete guidelines and requirements for your doctoral consortium submission</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Navigation Buttons -->
+  <div class="section-nav" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 3rem; margin-bottom: 2rem;">
+    <a href="#guidelines" class="nav-btn">Submission Guidelines</a>
+    <a href="#process" class="nav-btn">Submission Process</a>
+    <a href="#info" class="nav-btn">Additional Information</a>
+    <a href="#notes" class="nav-btn">Important Notes</a>
+  </div>
+
+  <!-- Coming Soon Section -->
+  <section class="coming-soon-section">
+    <div class="coming-soon-card">
+      <div class="coming-soon-text" style="text-align: left;">
+        <h3 id="guidelines" style="margin-top: 2rem; font-size: 1.75rem; color: #1f2937;">Submission Guidelines</h3>
+
+        <ul style="margin-top: 0.5rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+          <li>Submit a <strong>single PDF report</strong> using the provided LaTeX template.</li>
+          <li>Submissions must be <strong>single-authored by a doctoral student</strong> and are <strong>not anonymous</strong>.</li>
+          <li>Include your <strong>name, affiliation, and contact information</strong> in the submission.</li>
+          <li><strong>Advisors and collaborators cannot co-author</strong> the submission.</li>
+        </ul>
+
+        <p style="margin-bottom: 0.5rem;"><strong>The PDF report must include the following sections <span style="color: #dc2626;">in order</span>:</strong></p>
+
+        <ul style="margin-bottom: 2rem; padding-left: 1.2rem; line-height: 1.6;">
+          <li><strong>Abstract</strong>: Concise summary of your research (maximum 250 words).</li>
+          <li><strong>PhD Research Summary</strong>: Overview of your project, including objectives, approach, and key results. <strong>Length: 8 pages</strong> (excluding references).</li>
+          <li><strong>Curriculum Vitae (CV)</strong>: Academic background, publications, and relevant experience. <strong>Maximum: 2 pages</strong>.</li>
+          <li><strong>References</strong>: Include all cited works at the end of the document.</li>
+        </ul>
+
+        <p>👉 <a href="https://github.com/miccaimsb/msb-doctoral25/blob/main/MSB%20Doctoral%20Consortium%20Template%202025.zip" target="_blank" style="color: #2563eb; font-weight: 600;">Download the LaTeX template (ZIP)</a></p>
+
+        <h3 id="process" style="margin-top: 2rem; font-size: 1.75rem; color: #1f2937;">Submission Process</h3>
+
+        <ul style="margin-top: 1rem; padding-left: 1rem; line-height: 1.6;">
+          <li>
+            <strong style="color: #dc2626;">Registration:</strong><br />
+            Visit the submission portal: <strong>Link coming soon</strong>
+          </li>
+          <li>
+            <strong style="color: #dc2626;">Login Details:</strong><br />
+            After registering, you will receive an autogenerated code by email.
+          </li>
+          <li>
+            <strong style="color: #dc2626;">Upload Your Report:</strong><br />
+            Log in to the portal and click <strong>Upload Documents</strong> to submit your PDF file. You can upload your document multiple times; only the latest version will be considered.<br />
+            (If the filename appears the same, don’t worry! Your latest file is safely stored.)
+          </li>
+          <li>
+            <strong style="color: #dc2626;">Supervisor Recommendation Letter:</strong><br />
+            After you register, your supervisor will also receive a separate email with their own login details. They must log in to the same portal to upload the <strong>recommendation letter (PDF)</strong>.<br />
+            Please note: Students cannot view files uploaded by their supervisors; however, supervisors will be able to see the report uploaded by the student.
+          </li>
+        </ul>
+
+        <h3 id="info" style="margin-top: 2rem; font-size: 1.5rem; color: #1f2937;">Additional Submission Information</h3>
+
+        <ul style="margin-top: 1rem; padding-left: 1.2rem; line-height: 1.6;">
+          <li>
+            <strong>Publication:</strong><br />
+            The 8-page PhD Research Summary submitted to the consortium is tentatively planned for publication in the MICCAI 2025 Doctoral Consortium Proceedings as part of the Springer <em>Lecture Notes in Computer Science (LNCS)</em> series (subject to final confirmation).
+          </li>
+
+          <li>
+            <strong>Curriculum Vitae (CV):</strong><br />
+            The CV will be stored confidentially and will not be published or shared outside the organizing committee.
+          </li>
+
+          <li>
+            <strong>Recommendation Letter – Required Contents:</strong><br />
+            Your supervisor’s letter should:<br />
+            <ul style="margin-top: 0.3rem; margin-bottom: 0.5rem; padding-left: 1.2rem; list-style-type: disc;">
+              <li>Describe your research progress, academic potential, and achievements to date.</li>
+              <li>Explain why participating in this Doctoral Symposium would benefit your research development and career growth.</li>
+              <li>Provide their perspective on the significance of your research contribution: why your work is important to the MICCAI community.</li>
+              <li>Confirm the expected graduation date you provided in your application.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Confidentiality:</strong><br />
+            Recommendation letters will remain strictly confidential. They will only be accessible to the program chairs and the awards committee; they will not be shared with reviewers.
+          </li>
+        </ul>
+
+        <div id="notes" class="notification-card">
+          <h4><i class="fas fa-info-circle"></i> Other Important Notes!</h4>
+          <ul>
+            <li><strong>File Format</strong>: PDF only, generated using the provided LaTeX template.</li>
+            <li><strong>Incomplete submissions</strong> (e.g., missing recommendation letter) will not be considered.</li>
+          </ul>
+        </div>
+
+        <div class="contact-reminder">
+          For any questions, please contact: <strong><a href="mailto:miccai-student-board@csail.mit.edu">miccai-student-board@csail.mit.edu</a></strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/miccai-logo.png" alt="MICCAI Logo" />
+          <p>MICCAI 2025 Doctoral Consortium</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#program">Program</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MICCAI Student Board. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
