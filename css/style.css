@@ -264,6 +264,9 @@ section {
 }
 
 .program-card {
+    width: 100%;
+    max-width: 400px;
+    /* existing styles below */
     background: white;
     padding: 2rem;
     border-radius: 16px;
