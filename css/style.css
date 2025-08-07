@@ -673,3 +673,16 @@ section {
         font-size: 1.8rem;
     }
 }
+
+.timezone-note {
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.timezone {
+    color: #888;
+    font-size: 0.9em;
+    font-weight: normal;
+}
