@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Agenda - MICCAI 2025 Doctoral Consortium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .details-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .details-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(100,116,139,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .details-content {
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .details-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .details-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #1d4ed8;
+        }
+
+        .agenda-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .agenda-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .session-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .session-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .session-info {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .papers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        .papers-table th {
+            background: #f8fafc;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .papers-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f3f4f6;
+            vertical-align: top;
+        }
+
+        .papers-table tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .paper-author {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-affiliation {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .paper-number {
+            font-weight: 700;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            display: inline-block;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .session-stats {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0369a1;
+            display: block;
+        }
+
+        .stat-label {
+            color: #374151;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .schedule-info {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .schedule-info h3 {
+            color: #166534;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .schedule-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #22c55e;
+        }
+
+        .schedule-date {
+            font-weight: 700;
+            color: #166534;
+            font-size: 1.1rem;
+        }
+
+        .schedule-time {
+            color: #374151;
+            margin: 0.5rem 0;
+        }
+
+        .schedule-location {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .details-title {
+                font-size: 2rem;
+            }
+            
+            .papers-table {
+                font-size: 0.9rem;
+            }
+            
+            .papers-table th,
+            .papers-table td {
+                padding: 1rem;
+            }
+            
+            .session-header {
+                padding: 1.5rem;
+            }
+            
+            .session-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/miccai-logo.png" alt="MICCAI Logo" class="logo-img">
+                <span class="logo-text">MICCAI 2025 Doctoral Consortium</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#program" class="nav-link">Program</a></li>
+                <li><a href="index.html#eligibility" class="nav-link">Eligibility</a></li>
+                <li><a href="index.html#dates" class="nav-link">Dates</a></li>
+                <li><a href="#agenda" class="nav-link active">Agenda</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Details Hero Section -->
+    <section class="details-hero">
+        <div class="details-container">
+            <div class="details-content">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Main Page
+                </a>
+                <h1 class="details-title">Program Agenda</h1>
+                <p class="details-subtitle">Selected papers and detailed schedule for the doctoral consortium</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section class="agenda-section">
+        <div class="agenda-container">
+            <!-- Statistics Overview -->
+            <div class="session-stats">
+                <h3 style="color: #0369a1; margin-bottom: 1rem;">📊 Consortium Overview</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Total Selected Papers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Long Oral Presentations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Short Oral Presentations</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Information -->
+            <div class="schedule-info">
+                <h3><i class="fas fa-calendar-alt"></i>Event Schedule</h3>
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <div class="schedule-date">PhD Consortium Poster Sessions</div>
+                        <div class="schedule-time">Wednesday, September 24, 2025 — 3:30 PM to 5:00 PM</div>
+                        <div class="schedule-location">📍 Main Conference Venue: DCC 2 - alongside Poster Session 1</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-date">PhD Consortium Oral Sessions</div>
+                        <div class="schedule-time">Thursday, September 25, 2025 — 12:00 PM to 1:00 PM</div>
+                        <div class="schedule-location">📍 Main Conference Venue: DCC 1</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Long Oral Presentations -->
+            <div class="session-card">
+                <div class="session-header">
+                    <h2 class="session-title">Long Oral Presentations</h2>
+                    <p class="session-info">8 selected papers • 3 minutes presentation each</p>
+                </div>
+                <table class="papers-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">#</th>
+                            <th>Paper Title & Author Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="paper-number">1</span></td>
+                            <td>
+                                <div class="paper-title">Towards AI-guided Cardiovascular Ultrasonography with Large-scale Implicit Structural Learning</div>
+                                <div class="paper-author">Haojun Jiang</div>
+                                <div class="paper-affiliation">Tsinghua University, China</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">2</span></td>
+                            <td>
+                                <div class="paper-title">Annotation-Efficient Selection and Collaborative Datasets for Clinical Translation in Brain Vessel Segmentation</div>
+                                <div class="paper-author">Daniele Falcetta</div>
+                                <div class="paper-affiliation">EURECOM, France</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">3</span></td>
+                            <td>
+                                <div class="paper-title">Advancing Healthcare with Multimodal AI: Enhanced Diagnosis, Cognitive Monitoring, and Inclusive Medical Communication</div>
+                                <div class="paper-author">Raffaele Mineo</div>
+                                <div class="paper-affiliation">University of Catania, University Campus Bio-Medico of Rome, Italy</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">4</span></td>
+                            <td>
+                                <div class="paper-title">Deep Generative Models for Explainability and Fairness in Medical Image Analysis</div>
+                                <div class="paper-author">Amar Kumar</div>
+                                <div class="paper-affiliation">McGill University, Canada</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">5</span></td>
+                            <td>
+                                <div class="paper-title">Dynamic Learning of Histopathology in the Spatio-Temporal Continuum</div>
+                                <div class="paper-author">Niklas Babendererde</div>
+                                <div class="paper-affiliation">TU Darmstadt</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">6</span></td>
+                            <td>
+                                <div class="paper-title">Reeb Graphs for Topological Connectomics</div>
+                                <div class="paper-author">S Shailja</div>
+                                <div class="paper-affiliation">Stanford University, USA</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">7</span></td>
+                            <td>
+                                <div class="paper-title">Building Cancer AI Systems to Accelerate the Cancer Moonshot Using Medical Images</div>
+                                <div class="paper-author">Jieneng Chen</div>
+                                <div class="paper-affiliation">John Hopkins University, USA</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">8</span></td>
+                            <td>
+                                <div class="paper-title">Toward Next-generation Medical Vision Backbones: Modeling Finer-grained Long-range Visual Dependency</div>
+                                <div class="paper-author">Mingyuan Meng</div>
+                                <div class="paper-affiliation">The University of Sydney, Australia</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Short Oral Presentations -->
+            <div class="session-card">
+                <div class="session-header" style="background: linear-gradient(135deg, #4f46e5, #3730a3);">
+                    <h2 class="session-title">Short Oral Presentations</h2>
+                    <p class="session-info">7 selected papers • 2 minutes presentation each</p>
+                </div>
+                <table class="papers-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">#</th>
+                            <th>Paper Title & Author Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="paper-number">9</span></td>
+                            <td>
+                                <div class="paper-title">From Fusion to Diffusion for early Pulmonary Embolism detection and severity prediction</div>
+                                <div class="paper-author">Noa Cahan</div>
+                                <div class="paper-affiliation">Tel Aviv University, Israel</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">10</span></td>
+                            <td>
+                                <div class="paper-title">Deep Learning for Stroke Imaging: Enhancing Focus, Efficiency, and Fairness</div>
+                                <div class="paper-author">Uma-Maria Lal-Trehan Estrada</div>
+                                <div class="paper-affiliation">University of Girona, Spain</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">11</span></td>
+                            <td>
+                                <div class="paper-title">Enabling Generalizable Medical Imaging Analysis with Adaptation and Enhancement</div>
+                                <div class="paper-author">Liu Jie</div>
+                                <div class="paper-affiliation">City University of Hong Kong, Hong Kong</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">12</span></td>
+                            <td>
+                                <div class="paper-title">Deep Multi-Modality Fusion for Integrative Healthcare</div>
+                                <div class="paper-author">Omnia Alwazzan</div>
+                                <div class="paper-affiliation">Queen Mary University of London, United Kingdom</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">13</span></td>
+                            <td>
+                                <div class="paper-title">Deep Learning-Based Prediction of Molecular Markers in Glioma Using Magnetic Resonance Imaging</div>
+                                <div class="paper-author">Somayeh Farahani</div>
+                                <div class="paper-affiliation">Macquarie University, Australia</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">14</span></td>
+                            <td>
+                                <div class="paper-title">Generative Deep Learning for Cancer Image Analysis</div>
+                                <div class="paper-author">Richard Osuala</div>
+                                <div class="paper-affiliation">Universitat de Barcelona, Spain</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="paper-number">15</span></td>
+                            <td>
+                                <div class="paper-title">Multimodal AI for Equitable Respiratory Disease Diagnosis: From Chest X-rays to Cough Sounds in Resource-Constrained Healthcare</div>
+                                <div class="paper-author">Yasmeena Akhter</div>
+                                <div class="paper-affiliation">Indian Institute of Technology Jodhpur, India</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="schedule-info" style="background: #eff6ff; border-color: #bfdbfe;">
+                <h3 style="color: #2563eb;"><i class="fas fa-info-circle"></i>Additional Information</h3>
+                <p style="color: #374151; margin: 0;">
+                    
+                    <strong>Presentation Order:</strong> Both long and short oral presentations will be randomized on the day of the event. Participants will be notified of their specific presentation order upon arrival at the venue.
+                </p>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/miccai-logo.png" alt="MICCAI Logo">
+                    <p>MICCAI 2025 Doctoral Consortium</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#program">Program</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MICCAI Student Board. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
