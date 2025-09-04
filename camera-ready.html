@@ -130,6 +130,14 @@
             margin-top: 0;
         }
 
+        .instructions-content h4 {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
         .instructions-content p {
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -223,6 +231,127 @@
             font-weight: 600;
         }
 
+        /* Basic navbar and footer styles for standalone viewing */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
         @media (max-width: 768px) {
             .details-title {
                 font-size: 2rem;
@@ -235,6 +364,25 @@
             .section-nav {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -282,8 +430,9 @@
     <!-- Section Navigation Buttons -->
     <div class="section-nav">
         <a href="#requirements">Requirements</a>
-        <a href="#formatting">Formatting Guidelines</a>
+        <a href="#formatting">Report Preparation</a>
         <a href="#submission">Submission Process</a>
+        <a href="#presentation">Presentation Requirements</a>
     </div>
 
     <!-- Instructions Section -->
@@ -300,8 +449,100 @@
                     <h3 id="requirements">Camera Ready Requirements</h3>
                     
                     <p>Congratulations on your acceptance to the MICCAI 2025 Doctoral Consortium! Please follow these instructions carefully to prepare your camera ready manuscript for publication in the Springer LNCS proceedings.</p>
+
+                    <div class="alert-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                        <p>These instructions apply to all accepted reports. Please read them carefully, as failure to follow the guidelines may result in rejection for publication.</p>
+                    </div>
+
+                    <h3 id="formatting">Camera-Ready Report Preparation</h3>
+
                     
-                    <h4>Detailed instructions will be uploaded soon........</h4>
+                    <p>Reports must follow a uniform structure:</p>
+                    <ul>
+                        <li><strong>Remove</strong> white space/page break (if present) after the abstract. Do not put \clearpage after the abstract in case you are using latex.</li>
+                        <li><strong>Remove</strong> the dissertation status from the last section.</li>
+                        <li><strong>Remove</strong> the CV content.</li>
+                        <li>A latex template for the same is available at the link: <a href="https://drive.google.com/file/d/1_gOVFFK638LmLvxfM-aPxkF533Dq4utk/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1_gOVFFK638LmLvxfM-aPxkF533Dq4utk/view?usp=sharing</a>. Please do not change the section names, however you are free to choose subsections as per your style. Main content (including abstract and full report): up to 8.5 pages.</li>
+                        <li>References: strictly limited to 2 pages (pages 8.5–10.5).</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <h4><i class="fas fa-ruler"></i> Page Limit</h4>
+                        <p>The total length must <strong>not exceed 10.5 pages</strong>. Submissions beyond this limit will be rejected.</p>
+                    </div>
+
+                    <h4>Figures and Tables</h4>
+                    <ul>
+                        <li>Figures or tables reproduced from other published papers (including your papers) are <strong>not permitted</strong>, as reports will be published in Springer.</li>
+                        <li>Authors must rephrase or redraw all figures and tables in their own words and style.</li>
+                    </ul>
+
+                    <h4>License to Publish</h4>
+                    <ul>
+                        <li>A signed License to Publish (LtP) form is required. You can download and edit it from <a href="https://docs.google.com/document/d/16ePGnm4H9F7dH4UCtpxm4LubfuGcMaJc/edit?usp=sharing&ouid=110631141310210994828&rtpof=true&sd=true" target="_blank">this link</a>.</li>
+                        <li>The form must be <strong>signed in ink</strong>; digital or scanned signatures are not acceptable.</li>
+                    </ul>
+
+                    <h3 id="submission">Final Submission Package (ZIP File)</h3>
+                    
+                    <p>Authors must submit a ZIP file containing:</p>
+                    <ul>
+                        <li>The final camera-ready PDF of the report.</li>
+                        <li>The signed License to Publish form.</li>
+                        <li>The latex source files.</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <h4><i class="fas fa-folder-open"></i> File Structure</h4>
+                        <p>The overall file structure should be:</p>
+                        <pre style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-family: 'Courier New', monospace;">LastName_FirstName_DC25.zip
+|___LicenseToPublish.pdf
+|___ProposalDC.pdf
+|___LatexSourceFiles
+      |___splncs04.bst
+      |___mybibliography.bib
+      |___llncs.cls
+      |___main.tex
+      |___&lt;any figures&gt;</pre>
+                    </div>
+
+                    <div class="contact-box">
+                        <p><strong>Submission Link:</strong> <a href="https://forms.gle/81YvwxPibS4odfZR9" target="_blank">https://forms.gle/81YvwxPibS4odfZR9</a></p>
+                    </div>
+                    <div class="deadline-box">
+                        <h4><i class="fas fa-clock"></i> Camera Ready Deadline</h4>
+                        <p>September 17, 2025 (AOE - Anywhere on Earth)</p>
+                    </div>
+                    
+                    <h3 id="presentation">Presentation Requirements</h3>
+
+                    <h4>Poster</h4>
+                    <ul>
+                        <li><strong>All accepted reports</strong> must also prepare a poster in <strong>portrait</strong> format.</li>
+                        <li>Poster preparation must follow the MICCAI poster guidelines.</li>
+                        <li>Authors must include the Doctoral Consortium logos in their poster design. This logo can be accessed here: <a href="https://drive.google.com/file/d/1wDbKN13SdpwN-xhIPkR1ahj9YaSgu_wS/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1wDbKN13SdpwN-xhIPkR1ahj9YaSgu_wS/view?usp=sharing</a></li>
+                    </ul>
+
+                    <h4>Three-Minute Video Presentation</h4>
+                    <ul>
+                        <li><strong>All authors with accepted reports</strong> must prepare a 3-minute presentation video to be uploaded to YouTube.</li>
+                        <li>The MSB and Doctoral Consortium logos must appear on the first slide.</li>
+                        <li><strong>Only authors invited for oral presentations as part of the PhD Thesis Madness Competition</strong> will present their slides in person during the lunch break on the second day of the MICCAI main conference.</li>
+                        <li>For these authors, the slides used in the in-person presentation may be edited if necessary, although keeping them consistent with the uploaded video is preferable.</li>
+                    </ul>
+
+                    <div class="contact-box">
+                        <p><strong>Video Submission Link:</strong> <a href="https://forms.gle/AP9fUuN9kfKF8GuU8" target="_blank">https://forms.gle/AP9fUuN9kfKF8GuU8</a></p>
+                    </div>
+
+                    <div class="deadline-box">
+                        <h4><i class="fas fa-video"></i> Video Presentation Deadline</h4>
+                        <p>September 20, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
   
     <!-- Footer -->
