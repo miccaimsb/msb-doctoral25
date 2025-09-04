@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Ready Instructions - MICCAI 2025 Doctoral Consortium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .details-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .details-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(100,116,139,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .details-content {
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .details-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .details-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #1d4ed8;
+        }
+
+        .instructions-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .instructions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .instructions-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .section-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .section-nav a {
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 9999px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .section-nav a:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .instructions-content {
+            padding: 3rem;
+            text-align: left;
+        }
+
+        .instructions-content h3 {
+            font-size: 1.75rem;
+            color: #1f2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .instructions-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .instructions-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .instructions-content ul,
+        .instructions-content ol {
+            line-height: 1.6;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .instructions-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .alert-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .alert-box h4 {
+            color: #d97706;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-box p {
+            color: #92400e;
+            margin: 0;
+        }
+
+        .deadline-box {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .deadline-box h4 {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .deadline-box p {
+            color: #991b1b;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .contact-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .contact-box a {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .details-title {
+                font-size: 2rem;
+            }
+            
+            .instructions-content {
+                padding: 2rem;
+            }
+            
+            .section-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/miccai-logo.png" alt="MICCAI Logo" class="logo-img">
+                <span class="logo-text">MICCAI 2025 Doctoral Consortium</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#program" class="nav-link">Program</a></li>
+                <li><a href="index.html#eligibility" class="nav-link">Eligibility</a></li>
+                <li><a href="index.html#dates" class="nav-link">Dates</a></li>
+                <li><a href="agenda.html" class="nav-link">Agenda</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Details Hero Section -->
+    <section class="details-hero">
+        <div class="details-container">
+            <div class="details-content">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Main Page
+                </a>
+                <h1 class="details-title">Camera Ready Instructions</h1>
+                <p class="details-subtitle">Final submission guidelines for accepted participants</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Navigation Buttons -->
+    <div class="section-nav">
+        <a href="#requirements">Requirements</a>
+        <a href="#formatting">Formatting Guidelines</a>
+        <a href="#submission">Submission Process</a>
+    </div>
+
+    <!-- Instructions Section -->
+    <section class="instructions-section">
+        <div class="instructions-container">
+            <div class="instructions-card">
+                <div class="instructions-content">
+                    
+                    <div class="deadline-box">
+                        <h4><i class="fas fa-clock"></i> Camera Ready Deadline</h4>
+                        <p>September 17, 2025 (AOE - Anywhere on Earth)</p>
+                    </div>
+
+                    <h3 id="requirements">Camera Ready Requirements</h3>
+                    
+                    <p>Congratulations on your acceptance to the MICCAI 2025 Doctoral Consortium! Please follow these instructions carefully to prepare your camera ready manuscript for publication in the Springer LNCS proceedings.</p>
+                    
+                    <h4>Detailed instructions will be uploaded soon........</h4>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/miccai-logo.png" alt="MICCAI Logo">
+                    <p>MICCAI 2025 Doctoral Consortium</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#program">Program</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MICCAI Student Board. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
