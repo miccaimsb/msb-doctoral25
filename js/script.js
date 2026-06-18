@@ -53,17 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Navbar background on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
+    // Navbar: transparent over hero, solid when scrolled
+    const navbar = document.querySelector('.navbar');
+    function updateNavbar() {
+        if (!navbar) return;
+        if (window.scrollY > 60) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
-    });
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
 
     // Intersection Observer for animations
     const observerOptions = {
@@ -131,11 +132,11 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollToTopBtn.className = 'scroll-to-top';
     scrollToTopBtn.style.cssText = `
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        bottom: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #1A2B6B, #00AEEF);
         color: white;
         border: none;
         border-radius: 50%;
@@ -144,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
-        font-size: 18px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        box-shadow: 0 4px 20px rgba(0, 174, 239, 0.4);
     `;
     
     document.body.appendChild(scrollToTopBtn);
@@ -224,20 +225,7 @@ function debounce(func, wait, immediate) {
     };
 }
 
-// Optimized scroll handler
-const optimizedScrollHandler = debounce(function() {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        }
-    }
-}, 10);
-
-// Add performance-optimized scroll listener
-window.addEventListener('scroll', optimizedScrollHandler);
+// Optimized scroll handler (navbar handled in DOMContentLoaded)
 
 // Form validation functions (for future use)
 function validateForm(formData) {
@@ -280,7 +268,7 @@ document.addEventListener('keydown', function(e) {
 // Handle focus for accessibility
 document.addEventListener('focusin', function(e) {
     if (e.target.matches('.nav-link, .btn, .faq-question')) {
-        e.target.style.outline = '2px solid #667eea';
+        e.target.style.outline = '2px solid #00AEEF';
         e.target.style.outlineOffset = '2px';
     }
 });
