@@ -118,6 +118,23 @@ body {
     background: rgba(0, 174, 239, 0.1);
 }
 
+.nav-link-submit {
+    background: var(--cyan) !important;
+    color: var(--white) !important;
+    border-radius: 100px;
+    padding: 0.45rem 1.2rem !important;
+    font-weight: 600 !important;
+    margin-left: 0.5rem;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nav-link-submit:hover {
+    background: var(--cyan-light) !important;
+    color: var(--white) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 174, 239, 0.45);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
